@@ -1,4 +1,4 @@
-# SortAlgorithms
+# SortAlgorithms [![CMake](https://github.com/laolarou726/SortAlgorithms/actions/workflows/cmake.yml/badge.svg)](https://github.com/laolarou726/SortAlgorithms/actions/workflows/cmake.yml)
 
 A collection of common sorting algorithms, with template programming to support different data types.
 
