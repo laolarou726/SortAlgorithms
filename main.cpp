@@ -38,11 +38,11 @@ int main() {
     else{
         std::string inputStr;
 
-        std::cout << "Please input the test data (separate by whitespace): ";
+        std::cout << "Please input the test data (separate by comma): ";
         std::cin >> inputStr;
 
         std::vector<std::string> rawInputs;
-        SortAlgorithms::StringUtils::Tokenize(inputStr, " ", rawInputs);
+        SortAlgorithms::StringUtils::Tokenize(inputStr, ",", rawInputs);
 
         dataSource.clear();
         for(const auto& str : rawInputs){
@@ -52,7 +52,7 @@ int main() {
 
     // Comparator
 
-    SortAlgorithms::ComparatorBase<int> *comparator = new SortAlgorithms::AscendingComparator<int>();
+    SortAlgorithms::ComparatorBase<int> *comparator;
 
     std::cout << "Choose your sorting order\n"
               << "\t - (1) Ascending\n"
@@ -72,7 +72,7 @@ int main() {
 
     // Algorithm
 
-    SortAlgorithms::SorterBase<std::vector<int>> *sorter = new SortAlgorithms::BubbleSorter<std::vector<int>>(comparator);
+    SortAlgorithms::SorterBase<std::vector<int>> *sorter;
 
     std::cout << "Choose your sorting algorithm\n"
               << "\t - (1) Bubble Sort\n"
