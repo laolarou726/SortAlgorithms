@@ -11,17 +11,18 @@
 #include "Utils/RandomUtil.h"
 #include "Utils/StringUtils.h"
 
-// SortAlgo num(data size) num(1-2 order) num(1-5 algo)
+// SortAlgo num(0-1 enable dataset printing) num(data size) num(1-2 order) num(1-5 algo)
 int main(int argc, char *argv[]) {
 
-    if(argc != 4){
+    if(argc != 5){
         std::cout << "Incorrect arg size! [SortAlgo num(data size) num(1-2 order) num(1-5 algo)]" << std::endl;
         return -1;
     }
 
-    int dataSize = std::stoi(argv[1]);
-    int comparatorChoice = std::stoi(argv[2]);
-    int sorterChoice = std::stoi(argv[3]);
+    int enablePrinting = std::stoi(argv[1]);
+    int dataSize = std::stoi(argv[2]);
+    int comparatorChoice = std::stoi(argv[3]);
+    int sorterChoice = std::stoi(argv[4]);
 
     if(dataSize <= 0){
         std::cout << "Incorrect data size, must greater than 0!" << std::endl;
@@ -72,19 +73,25 @@ int main(int argc, char *argv[]) {
             break;
     }
 
-    std::cout << "Before sorting: ";
-    for (int elem : dataSource) {
-        std::cout << elem << " ";
+    if(enablePrinting == 1){
+        std::cout << "Before sorting: ";
+        for (int elem : dataSource) {
+            std::cout << elem << " ";
+        }
+        std::cout << std::endl;
     }
-    std::cout << std::endl;
 
     sorter->DoSort(dataSource);
 
-    std::cout << "After sorting: ";
-    for (int elem : dataSource) {
-        std::cout << elem << " ";
+    std::cout << "[SortAlgorithm] Sort Complete! Data Set Size: " << dataSize << "." << std::endl;
+
+    if(enablePrinting == 1){
+        std::cout << "After sorting: ";
+        for (int elem : dataSource) {
+            std::cout << elem << " ";
+        }
+        std::cout << std::endl;
     }
-    std::cout << std::endl;
 
     // Data Source
     /*
