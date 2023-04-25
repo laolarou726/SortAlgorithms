@@ -11,10 +11,83 @@
 #include "Utils/RandomUtil.h"
 #include "Utils/StringUtils.h"
 
-int main() {
+// SortAlgo num(data size) num(1-2 order) num(1-5 algo)
+int main(int argc, char *argv[]) {
+
+    if(argc != 4){
+        std::cout << "Incorrect arg size! [SortAlgo num(data size) num(1-2 order) num(1-5 algo)]" << std::endl;
+        return -1;
+    }
+
+    int dataSize = std::stoi(argv[1]);
+    int comparatorChoice = std::stoi(argv[2]);
+    int sorterChoice = std::stoi(argv[3]);
+
+    if(dataSize <= 0){
+        std::cout << "Incorrect data size, must greater than 0!" << std::endl;
+        return -1;
+    }
+
+    if(comparatorChoice != 1 && comparatorChoice != 2){
+        std::cout << "Incorrect order, must be 1(Ascending) or 2(Descending).!" << std::endl;
+        return -1;
+    }
+
+    if(sorterChoice < 1 || sorterChoice > 5){
+        std::cout << "Incorrect Sorting algo! Must be 1-5." << std::endl;
+        std::cout << "Choose your sorting algorithm\n"
+                  << "\t - (1) Bubble Sort\n"
+                  << "\t - (2) Insertion Sort\n"
+                  << "\t - (3) Merge Sort\n"
+                  << "\t - (4) Quick Sort\n"
+                  << "\t - (5) Selection Sort\n";
+        return -1;
+    }
+
+    std::vector<int> dataSource = SortAlgorithms::RandomUtil::GetRandomIntVector(dataSize, -10000, 10000);
+
+    SortAlgorithms::ComparatorBase<int> *comparator;
+    if(comparatorChoice == 1)
+        comparator = new SortAlgorithms::AscendingComparator<int>();
+    else
+        comparator = new SortAlgorithms::DescendingComparator<int>();
+
+    SortAlgorithms::SorterBase<std::vector<int>> *sorter;
+
+    switch (sorterChoice) {
+        case 1:
+            sorter = new SortAlgorithms::BubbleSorter<std::vector<int>>(comparator);
+            break;
+        case 2:
+            sorter = new SortAlgorithms::InsertionSorter<std::vector<int>>(comparator);
+            break;
+        case 3:
+            sorter = new SortAlgorithms::MergeSorter<std::vector<int>>(comparator);
+            break;
+        case 4:
+            sorter = new SortAlgorithms::QuickSorter<std::vector<int>>(comparator);
+            break;
+        case 5:
+            sorter = new SortAlgorithms::SelectionSorter<std::vector<int>>(comparator);
+            break;
+    }
+
+    std::cout << "Before sorting: ";
+    for (int elem : dataSource) {
+        std::cout << elem << " ";
+    }
+    std::cout << std::endl;
+
+    sorter->DoSort(dataSource);
+
+    std::cout << "After sorting: ";
+    for (int elem : dataSource) {
+        std::cout << elem << " ";
+    }
+    std::cout << std::endl;
 
     // Data Source
-
+    /*
     std::cout << "Choose your data source\n"
                 << "\t - (1) Random (Any number between -100 ~ 100)\n"
                 << "\t - (2) By Input\n"
@@ -83,7 +156,7 @@ int main() {
               << ": ";
 
     int sorterChoice = 1;
-    std::cin >> comparatorChoice;
+    std::cin >> sorterChoice;
 
     if(sorterChoice < 1 || sorterChoice > 5)
         return 0;
@@ -119,6 +192,7 @@ int main() {
         std::cout << elem << " ";
     }
     std::cout << std::endl;
+     */
 
     return 0;
 }

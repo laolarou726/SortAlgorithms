@@ -15,7 +15,7 @@ namespace SortAlgorithms {
         explicit InsertionSorter(ComparatorBase<typename TContainer::value_type>* comparator)  : SorterBase<TContainer>(comparator){}
         void DoSort(TContainer& container) override {
             size_t n = container.size();
-            ptrdiff_t j = 0;
+            long j = 0;
 
             for (size_t i = 1; i < n; i++) {
                 auto key = container[i];
