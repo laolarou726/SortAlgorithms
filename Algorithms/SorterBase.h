@@ -9,16 +9,12 @@
 #include "../Comparators/ComparatorBase.h"
 
 namespace SortAlgorithms {
-
-    template<typename TContainer>
     class SorterBase {
     protected:
-        ComparatorBase<typename TContainer::value_type>* comparator;
-        explicit SorterBase(ComparatorBase<typename TContainer::value_type>* comparator){
-            this->comparator = comparator;
-        }
+        ComparatorBase* comparator;
+        explicit SorterBase(ComparatorBase* comparator);
     public:
-        virtual void DoSort(TContainer& container) = 0;
+        virtual void DoSort(std::vector<int>& container) = 0;
     };
 
 } // SortAlgorithms

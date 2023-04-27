@@ -9,17 +9,11 @@
 
 namespace SortAlgorithms {
 
-    template<typename TComp>
-    class DescendingComparator : public ComparatorBase<TComp>{
+    class DescendingComparator : public ComparatorBase{
     public:
-        [[clang::noinline]]
-        __attribute__ ((noinline)) bool Compare(const TComp &comp1, const TComp &comp2) override{
-            return comp1 < comp2;
-        }
+        bool Compare(int &comp1, int &comp2) override;
 
-        std::ostream &operator<<(std::ostream &out) override{
-            return out << "Descending Order Comparator";
-        }
+        std::ostream &operator<<(std::ostream &out) override;
     };
 
 } // SortAlgorithms

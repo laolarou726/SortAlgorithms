@@ -47,29 +47,29 @@ int main(int argc, char *argv[]) {
 
     std::vector<int> dataSource = SortAlgorithms::RandomUtil::GetRandomIntVector(dataSize, -10000, 10000);
 
-    SortAlgorithms::ComparatorBase<int> *comparator;
+    SortAlgorithms::ComparatorBase *comparator;
     if(comparatorChoice == 1)
-        comparator = new SortAlgorithms::AscendingComparator<int>();
+        comparator = new SortAlgorithms::AscendingComparator();
     else
-        comparator = new SortAlgorithms::DescendingComparator<int>();
+        comparator = new SortAlgorithms::DescendingComparator();
 
-    SortAlgorithms::SorterBase<std::vector<int>> *sorter;
+    SortAlgorithms::SorterBase *sorter;
 
     switch (sorterChoice) {
         case 1:
-            sorter = new SortAlgorithms::BubbleSorter<std::vector<int>>(comparator);
+            sorter = new SortAlgorithms::BubbleSorter(comparator);
             break;
         case 2:
-            sorter = new SortAlgorithms::InsertionSorter<std::vector<int>>(comparator);
+            sorter = new SortAlgorithms::InsertionSorter(comparator);
             break;
         case 3:
-            sorter = new SortAlgorithms::MergeSorter<std::vector<int>>(comparator);
+            sorter = new SortAlgorithms::MergeSorter(comparator);
             break;
         case 4:
-            sorter = new SortAlgorithms::QuickSorter<std::vector<int>>(comparator);
+            sorter = new SortAlgorithms::QuickSorter(comparator);
             break;
         case 5:
-            sorter = new SortAlgorithms::SelectionSorter<std::vector<int>>(comparator);
+            sorter = new SortAlgorithms::SelectionSorter(comparator);
             break;
     }
 
