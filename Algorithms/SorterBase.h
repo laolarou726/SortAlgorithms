@@ -15,6 +15,7 @@ namespace SortAlgorithms {
         explicit SorterBase(ComparatorBase* comparator);
     public:
         virtual void DoSort(std::vector<int>& container) = 0;
+        ~SorterBase(){}
     };
 
 } // SortAlgorithms

@@ -15,6 +15,7 @@ namespace SortAlgorithms {
         void mergeSort(std::vector<int>& container, size_t l, size_t r);
     public:
         explicit MergeSorter(ComparatorBase* comparator)  : SorterBase(comparator){}
+        ~MergeSorter(){}
         void DoSort(std::vector<int>& container) override;
     };
 

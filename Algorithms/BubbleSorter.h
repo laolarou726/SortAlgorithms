@@ -11,6 +11,7 @@ namespace SortAlgorithms {
     class BubbleSorter : public SorterBase {
     public:
         explicit BubbleSorter(ComparatorBase* comparator)  : SorterBase(comparator){}
+        ~BubbleSorter(){}
         void DoSort(std::vector<int>& container) override;
     };
 

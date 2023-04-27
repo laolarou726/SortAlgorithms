@@ -14,6 +14,8 @@ namespace SortAlgorithms {
         bool Compare(int &comp1, int &comp2) override;
 
         std::ostream &operator<<(std::ostream &out) override;
+
+        ~AscendingComparator(){}
     };
 
 } // SortAlgorithms

@@ -11,6 +11,7 @@ namespace SortAlgorithms {
     class SelectionSorter : public SorterBase {
     public:
         explicit SelectionSorter(ComparatorBase* comparator)  : SorterBase(comparator){}
+        ~SelectionSorter(){}
         void DoSort(std::vector<int>& container) override;
     };
 

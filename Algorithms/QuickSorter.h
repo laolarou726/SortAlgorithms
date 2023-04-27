@@ -13,6 +13,7 @@ namespace SortAlgorithms {
         void quickSort(std::vector<int>& container, size_t left, size_t right);
     public:
         explicit QuickSorter(ComparatorBase* comparator)  : SorterBase(comparator){}
+        ~QuickSorter(){}
         void DoSort(std::vector<int>& container) override;
     };
 

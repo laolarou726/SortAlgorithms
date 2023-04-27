@@ -11,6 +11,7 @@ namespace SortAlgorithms {
     class InsertionSorter : public SorterBase {
     public:
         explicit InsertionSorter(ComparatorBase* comparator)  : SorterBase(comparator){}
+        ~InsertionSorter(){}
         void DoSort(std::vector<int>& container) override;
     };
 
