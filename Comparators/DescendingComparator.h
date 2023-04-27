@@ -11,6 +11,7 @@ namespace SortAlgorithms {
 
     class DescendingComparator : public ComparatorBase{
     public:
+        [[clang::noinline]]
         bool Compare(int &comp1, int &comp2) override;
 
         std::ostream &operator<<(std::ostream &out) override;

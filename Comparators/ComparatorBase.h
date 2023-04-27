@@ -10,6 +10,7 @@
 namespace SortAlgorithms {
     class ComparatorBase {
     public:
+        [[clang::noinline]]
         virtual bool Compare(int &comp1, int &comp2) = 0;
         virtual std::ostream &operator<<(std::ostream &out);
     };
