@@ -49,9 +49,9 @@ int main(int argc, char *argv[]) {
 
     SortAlgorithms::ComparatorBase *comparator;
     if(comparatorChoice == 1)
-        comparator = (SortAlgorithms::ComparatorBase*) new SortAlgorithms::AscendingComparator();
+        comparator = dynamic_cast<SortAlgorithms::ComparatorBase*>(new SortAlgorithms::AscendingComparator());
     else
-        comparator = (SortAlgorithms::ComparatorBase*) new SortAlgorithms::DescendingComparator();
+        comparator = dynamic_cast<SortAlgorithms::ComparatorBase*>(new SortAlgorithms::DescendingComparator());
 
     SortAlgorithms::SorterBase *sorter;
 
