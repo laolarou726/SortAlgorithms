@@ -13,7 +13,6 @@ namespace SortAlgorithms {
     class DescendingComparator : public ComparatorBase<TComp>{
     public:
         [[clang::noinline]]
-        __attribute__((noinline))
         bool Compare(const TComp &comp1, const TComp &comp2) override{
             return comp1 < comp2;
         }

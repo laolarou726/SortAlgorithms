@@ -12,6 +12,7 @@ namespace SortAlgorithms {
     template<typename TComp>
     class ComparatorBase {
     public:
+        [[clang::noinline]]
         virtual bool Compare(const TComp &comp1, const TComp &comp2) = 0;
         virtual std::ostream &operator<<(std::ostream &out);
     };
