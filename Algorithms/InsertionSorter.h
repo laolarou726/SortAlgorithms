@@ -21,7 +21,7 @@ namespace SortAlgorithms {
                 auto key = container[i];
                 j = i - 1;
 
-                [[clang::noinline]] bool compareResult = this->comparator->Compare(container[j], key);
+                bool compareResult = this->comparator->Compare(container[j], key);
 
                 while (j >= 0 && compareResult) {
                     container[j + 1] = container[j];

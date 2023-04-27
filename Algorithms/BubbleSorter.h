@@ -22,7 +22,8 @@ namespace SortAlgorithms {
 
                 // Perform (n-i-1) comparisons and swap elements if needed
                 for (size_t j = 0; j < n - i - 1; j++) {
-                    [[clang::noinline]] bool compareResult = this->comparator->Compare(container[j], container[j+1]);
+                    bool compareResult = false;
+                    [[clang::noinline]](compareResult = this->comparator->Compare(container[j], container[j+1]));
 
                     if (compareResult) {
                         std::swap(container[j], container[j+1]);

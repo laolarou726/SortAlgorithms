@@ -18,10 +18,8 @@ namespace SortAlgorithms {
 
             /* partition */
             while (i <= j) {
-                [[clang::noinline]]
                 while (this->comparator->Compare(pivot, container[i]))
                     i++;
-                [[clang::noinline]]
                 while (this->comparator->Compare(container[j], pivot))
                     j--;
 
