@@ -49,27 +49,27 @@ int main(int argc, char *argv[]) {
 
     SortAlgorithms::ComparatorBase *comparator;
     if(comparatorChoice == 1)
-        comparator = new SortAlgorithms::AscendingComparator();
+        comparator = (SortAlgorithms::ComparatorBase*) new SortAlgorithms::AscendingComparator();
     else
-        comparator = new SortAlgorithms::DescendingComparator();
+        comparator = (SortAlgorithms::ComparatorBase*) new SortAlgorithms::DescendingComparator();
 
     SortAlgorithms::SorterBase *sorter;
 
     switch (sorterChoice) {
         case 1:
-            sorter = new SortAlgorithms::BubbleSorter(comparator);
+            sorter = (SortAlgorithms::SorterBase*) new SortAlgorithms::BubbleSorter(comparator);
             break;
         case 2:
-            sorter = new SortAlgorithms::InsertionSorter(comparator);
+            sorter = (SortAlgorithms::SorterBase*) new SortAlgorithms::InsertionSorter(comparator);
             break;
         case 3:
-            sorter = new SortAlgorithms::MergeSorter(comparator);
+            sorter = (SortAlgorithms::SorterBase*) new SortAlgorithms::MergeSorter(comparator);
             break;
         case 4:
-            sorter = new SortAlgorithms::QuickSorter(comparator);
+            sorter = (SortAlgorithms::SorterBase*) new SortAlgorithms::QuickSorter(comparator);
             break;
         case 5:
-            sorter = new SortAlgorithms::SelectionSorter(comparator);
+            sorter = (SortAlgorithms::SorterBase*) new SortAlgorithms::SelectionSorter(comparator);
             break;
     }
 
