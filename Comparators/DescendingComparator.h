@@ -15,7 +15,7 @@ namespace SortAlgorithms {
 
         std::ostream &operator<<(std::ostream &out) override;
 
-        ~DescendingComparator(){}
+        ~DescendingComparator();
     };
 
 } // SortAlgorithms

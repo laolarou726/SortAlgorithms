@@ -11,3 +11,7 @@ std::ostream &SortAlgorithms::DescendingComparator::operator<<(std::ostream &out
     return out << "Descending Order Comparator";
 }
 
+SortAlgorithms::DescendingComparator::~DescendingComparator() {
+
+}
+
