@@ -10,8 +10,3 @@ bool SortAlgorithms::DescendingComparator::Compare(int &comp1, int &comp2) {
 std::ostream &SortAlgorithms::DescendingComparator::operator<<(std::ostream &out) {
     return out << "Descending Order Comparator";
 }
-
-SortAlgorithms::DescendingComparator::~DescendingComparator() {
-
-}
-
