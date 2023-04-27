@@ -32,7 +32,7 @@ namespace SortAlgorithms {
             k = l; // Initial index of merged subarray
 
             while (i < n1 && j < n2) {
-                bool compareResult = this->comparator->Compare(R[j], L[i]);
+                [[clang::noinline]] bool compareResult = this->comparator->Compare(R[j], L[i]);
 
                 if (compareResult) {
                     container[k] = L[i];

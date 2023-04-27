@@ -20,7 +20,7 @@ namespace SortAlgorithms {
                 size_t index = i;
 
                 for (size_t j = i+1; j < n; j++) {
-                    bool compareResult = this->comparator->Compare(container[index], container[j]);
+                    [[clang::noinline]] bool compareResult = this->comparator->Compare(container[index], container[j]);
 
                     if (compareResult)
                         index = j;
