@@ -13,7 +13,7 @@ namespace SortAlgorithms {
     public:
         virtual bool Compare(int &comp1, int &comp2) = 0;
         virtual std::ostream &operator<<(std::ostream &out);
-        ~ComparatorBase(){}
+        ~ComparatorBase()= default;
     };
 
 } // SortAlgorithms

@@ -11,11 +11,12 @@
 namespace SortAlgorithms {
     class SorterBase {
     protected:
-        ComparatorBase* comparator;
+        ComparatorBase* comparator{};
         explicit SorterBase(ComparatorBase* comparator);
     public:
         virtual void DoSort(std::vector<int>& container) = 0;
-        ~SorterBase(){}
+        ~SorterBase()= default;
+        SorterBase() = default;
     };
 
 } // SortAlgorithms
